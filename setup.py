@@ -107,9 +107,8 @@ def run_setup(with_extension):
     )
 
 
-IS_PYPY = hasattr(sys, 'pypy_translation_info')
 try:
-    run_setup(not IS_PYPY)
+    run_setup(True)
 except BuildFailed:
     BUILD_EXT_WARNING = ('WARNING: The extension could not be compiled, '
                          'speedups are not enabled.')
